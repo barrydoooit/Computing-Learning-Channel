@@ -1,0 +1,250 @@
+#user-posts{
+    display: flex;
+    flex-direction: column;
+}
+
+#user-posts .post-list{
+    width: var(--post-width);
+}
+
+#user-posts .post-list .post:hover{
+    /*transform: translate(0, -5px);*/
+    transition: 0.3s;
+    box-shadow: 0px 2px 8px 0px gray;
+}
+
+#user-posts .post-list .post {
+    width: var(--post-width);
+    margin: 20px auto;
+    display: inline-block;
+    height: calc(0.3*var(--post-width));
+    background:#f8f8f8;
+    transition: 0.3s;
+    border-right: 5px solid orange;
+}
+
+#user-posts .post-list .post .img-like {
+    float: left;
+    width: 30%;
+    height: 100%;
+    margin: 0px;
+    position: relative;
+}
+
+#user-posts .post-list .post .img-like .coverimg {
+    background-size: 100% 100%;
+    display: block;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: .5s ease; 
+    box-shadow: inset -20px 0px 40px -20px rgba(36, 36, 36, 0.3);
+}
+
+#user-posts .post-list .post .img-like .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #e7ab28;
+    /*background-image: url(assets/images/icons/like.png);
+    background-size: 100% 100%;*/
+    cursor: pointer;
+    box-shadow: inset -20px 0px 50px -20px rgba(129, 47, 0, 0.3);
+}
+
+#user-posts .post-list .post .img-like .overlay .text {
+    color: white;
+    font-size: 80px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center; 
+}
+
+#user-posts .post-list .post:hover .img-like .coverimg {
+    opacity: 0.3;
+    transition: 0.3s;
+}
+
+#user-posts .post-list .post:hover .img-like .overlay {
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+#user-posts .post-list .post .img-like .overlay:hover {
+    background: rgb(194, 126, 0);
+    border-radius: 40%;
+    transition: 0.3s;
+}
+
+#user-posts .post-list .post .post-preview-wrapper {
+    float: right;
+    width: 70%;
+    height: 100%;
+    margin: 0;
+    display: block;
+}
+
+#user-posts .post-list .post-preview{
+    height: 80%;
+    width: 100%;
+    margin: calc(0.03*var(--post-width)) 0px;
+}
+
+#user-posts .post-list .post .post-preview .post-title{
+   position: relative;
+   height: 30%; 
+   width: 80%;
+   word-wrap:break-word;
+   cursor: pointer;
+   margin: 0px auto;
+}
+#user-posts .post-list .post .post-preview .post-title h3{
+    font-size: 30px;
+    font-family: 'Helvetica', sans-serif;
+    text-transform: uppercase;
+    margin: 0px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);  
+    color: black;
+    font-weight: bold;
+}
+#user-posts .post-list .post .post-preview .post-title:hover h3{
+    color: orange;
+    transform: translate(1.05);
+    transition: 0.3s;
+}
+
+#user-posts .post-list .post .post-preview .preview-text{
+    word-wrap:break-word;
+    text-indent: 4ch;
+    margin-top: 0;
+    padding-top: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    height: 55%;
+    overflow: hidden;
+    font-size: 20px;
+    color: #4b4b4b;
+}
+
+#user-posts .post-list .post .post-preview .post-info{
+    height: 15%;
+}
+
+#user-posts .post-list .post .post-preview .post-info h4{
+    color: black;
+}
+
+#user-posts .post-list .post .post-preview .post-info .likes{
+    display:inline-block;
+    width: 20%;
+    position: relative;
+    height: 100%;
+    background: none;
+    border: none;
+	color: inherit;
+    padding: 0;
+    font-size: 1.2rem;
+}
+
+#user-posts .post-list .post .post-preview .post-info .likes h4{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+    font-weight: bold;
+   
+}
+#user-posts .post-list .post .post-preview .post-date-container{
+    height: 100%;
+    width: 40%;
+    display: inline-block;
+    position: relative;
+}
+
+#user-posts .post-list .post .post-preview .post-date-container .post-date{
+    margin: 0px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+    font-size: 0.9rem;
+}
+
+#user-posts .post-list .post .post-preview .post-author-container{
+    height: 100%;
+    width: 40%;
+    display:inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+#user-posts .post-list .post .post-preview .post-author-container .author-profileimg{
+    position: absolute;
+    top: 50%;
+    margin-left: 10px;
+    transform: translate(0, -50%);
+    height: 50px;
+    width: 50px;
+    border: 2px solid black;
+    border-radius: 50%;
+    background-size: 100% 100%;
+}
+
+#user-posts .post-list .post .post-preview .post-author-container .author-username{
+    margin: 0px;
+    position: absolute;
+    top: 50%;
+    padding-left: 70px;
+    transform: translate(0, -50%);
+    overflow: hidden;
+}
+
+
+#user-posts .page-number{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#user-posts .page-number button{
+    width: 40px;
+    height:40px;
+    border-radius: 20px;
+    border: none;
+    appearance: none;
+    cursor: pointer;
+    background: #78919e;
+    margin: 8px;
+    transition: 0.3s;
+    font-family: "tahoma", serif;
+    font-size:1.1rem;
+    color: white;
+    text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+}
+
+#user-posts .page-number button:hover{
+    background: #ff8d27;
+    transform: scale(1.1);
+}
+
+#user-posts .page-number button.active{
+    width:75px;
+    background: #ff8d27;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}

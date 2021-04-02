@@ -1,0 +1,323 @@
+
+* {
+    box-sizing: border-box;
+    --theme-color: #2b333e;
+}
+
+*:focus {
+    outline: 0;
+}
+
+a{
+    color: var(--theme-color);
+    text-decoration-line: none;
+    transition: 0.3s;
+}
+a:hover{
+    transition: 0.3s;
+}
+body {
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+    background: #ececec;
+    font-family: 'lora', serif;
+}
+
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.btn {
+    background: orange;
+    padding: .5rem 1rem;
+    color: white;
+    border-radius: .25rem;
+}
+
+.btn:hover {
+    transform: scale(1.5);
+    background: #ffcd7a;
+}
+
+.text-input {
+    padding: .7rem 1rem;
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #444;
+    outline: none;
+    color: #444;
+    line-height: 1.5rem;
+    font-family: "Lora", serif;
+}
+header {
+    background: var(--theme-color);
+    height: 66px;
+    cursor: default;
+}
+
+header * {
+    color: white;
+}
+
+header .logo {
+    float: left;
+    height: inherit;
+    margin-left: 2em;
+    /*border: 1px solid red;*/
+}
+
+header .logo-text {
+    margin: 9px;
+    font-family: 'Candal', serif;
+}
+
+header .logo-text span {
+    color: gold;
+}
+
+header ul {
+    float: right;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    /*border: 1px solid red;*/
+}
+
+header ul li {
+    float: left;
+    position: relative;
+}
+
+header ul li ul {
+    position: absolute;
+    top: 66px;
+    width:180px;
+    right: 0px;
+    display: none;
+    z-index: 88888;
+}
+
+header ul li a {
+    height: 66px;
+}
+
+header ul li:hover ul {
+    display: block;
+    width:180px;
+}
+
+header ul li ul li {
+   width: 100%;
+}
+
+header ul li ul li a {
+    color: black;
+    background: white;
+
+}
+
+header ul li ul li a:hover {
+    background: silver;
+}
+
+header ul li ul li a.logout {
+    color: darkred;
+}
+
+header ul li a {
+    display: block;
+    padding: 21px;
+    font-size: 1.1em;
+    text-decoration: none;
+}
+
+header ul li a:hover {
+    background: #8ca3ac;
+    transition: 0.5s;
+}
+
+header .menu-toggle {
+    display: none;
+}
+
+.welcome-msg{
+    width:100%;
+    min-width: 300px;
+    background: rgb(255, 241, 181);
+    border:2px solid rgb(114, 74, 62);
+    text-align: center;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+@media screen and (max-width: 1048px) {
+    header {
+        position: relative;
+    }
+    header ul {
+        width: 100%;
+        background: #4a6874;
+        max-height: 0px;
+        overflow: hidden;
+    }
+    .showing {
+        max-height: 100em;
+    }
+    header ul li {
+        width: 100%;
+    }
+    header ul li ul {
+        position: static;
+        display: block;
+        width: 100%;
+        background: inherit;
+    }
+    header ul li ul li a {
+        color: white;
+        background: #4a6874;
+        padding: 10px 10px 10px 50px;
+    }
+    header ul li ul li a:hover {
+        background: #8ca3ac;
+    }
+    header ul li ul li a.logout {
+        color: darkred;
+    }
+    header .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        font-size: 1.8em;
+    }
+    header .logo {
+        margin-left: .5em;
+        /*border: 1px solid red;*/
+    }
+    header .logo-text {
+        font-size: 1.9em;
+    }
+}
+
+#user-pane{
+    background-image: linear-gradient(to right,#fbc2eb,#a6c1ee);
+    min-height:1000px;
+    font-family: 'Open Sans Light', serif;
+}
+#user-pane .auth-content{
+    width: 350px;
+    margin: 100px auto;
+    padding: 20px;
+    background: rgba(255,255,255,0.5);
+    border-radius: 10px;
+    opacity: 70%;
+    align-items: center;
+}
+#user-pane .auth-content form{
+    outline: none;
+}
+#user-pane .auth-content form .form-title{
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 100px;
+    letter-spacing: .05em;
+}
+
+#user-pane .auth-content form .error-msg{
+    display: block;
+    width:100%;
+    margin:5px auto;
+    padding: 8px;
+    border-radius: 5px;
+    list-style: none;
+    color: #884b4b;
+    background: #f3bdbd;
+    border: 2px solid #884b4b;
+}
+#user-pane .auth-content form .form-item input[type="file"]{
+    display:none;
+ }
+ 
+#img-frame{
+     height:100px;
+     width: 100px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border-radius: 50%;
+     background-size: 100% 100%;
+     cursor: pointer;
+     border:5px solid black;
+     margin: 0px auto 10px;
+ }
+ 
+ .craft-panel .newpost-content form .form-item .uploader-title #imgbtn-label{
+     color:white;
+     height:40px;
+     flex:2;
+     background-color: #f5af09;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     font-family: "Montserrat", sans-serif;
+ }
+
+#user-pane .auth-content form .form-item label{
+    font-weight: bold;
+}
+#user-pane .auth-content form .form-item input{
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+    border: none;
+    padding: 10px;
+    border-bottom: 1px solid rgb(128, 125, 125);
+    font-size: 15px;
+}
+#user-pane .auth-content form .form-item .forgot{
+    text-align: center;
+    line-height: 10px;
+    margin: 0px;
+}
+#user-pane .auth-content form .form-item .forgot a{
+    color: rgb(167, 6, 6);
+}
+#user-pane .auth-content form .form-item .forgot a:hover{
+    color: rgb(255, 152, 111);
+}
+#user-pane .auth-content form button{
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    margin:20px auto;
+    background: #2f67b8;
+    border: none;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    color: #fff;
+    transition: 0.4s;
+}
+
+#user-pane .auth-content form button:hover{
+    background: #83abf5;
+    transition: 0.4s;
+}
+#user-pane .auth-content form button:active{
+    background: #2f67b8;
+}
+#user-pane .auth-content .alternate{
+    text-align: center;
+    line-height: 40px;
+}
+
+#user-pane .auth-content .alternate a{
+    color: #397ff5;
+}
+#user-pane .auth-content .alternate a:hover{
+    color: #ff7409;
+}

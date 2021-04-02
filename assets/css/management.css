@@ -1,0 +1,596 @@
+* {
+    box-sizing: border-box;
+    --theme-color: #2b333e;
+}
+
+*:focus {
+    outline: 0;
+}
+
+a {
+    color: var(--theme-color);
+    text-decoration-line: none;
+}
+
+body {
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+    min-height: 100%;
+    background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+    font-family: 'Roboto', sans-serif;
+}
+
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+h1 {
+    font-family: "Candal", serif;
+    color: #2a2a2a;
+    margin: 5px;
+}
+
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.btn {
+    background: orange;
+    padding: .5rem 1rem;
+    color: white;
+    border-radius: .25rem;
+}
+
+.btn:hover {
+    transform: scale(1.5);
+    background: #ffcd7a;
+}
+
+.text-input {
+    padding: .7rem 1rem;
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #444;
+    outline: none;
+    color: #444;
+    line-height: 1.5rem;
+    font-family: "Lora", serif;
+}
+
+header {
+    background: var(--theme-color);
+    height: 66px;
+    cursor: default;
+    font-family: 'lora', serif;
+}
+
+header * {
+    color: white;
+}
+
+header .logo {
+    float: left;
+    height: inherit;
+    margin-left: 2em;
+    /*border: 1px solid red;*/
+}
+
+header .logo-text {
+    margin: 9px;
+    font-family: 'Candal', serif;
+}
+
+header .logo-text span {
+    color: gold;
+}
+
+header ul {
+    float: right;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    /*border: 1px solid red;*/
+}
+
+header ul li {
+    float: left;
+    position: relative;
+}
+
+header ul li ul {
+    position: absolute;
+    top: 66px;
+    width: 180px;
+    right: 0px;
+    display: none;
+    z-index: 88888;
+}
+
+header ul li a {
+    height: 66px;
+}
+
+header ul li:hover ul {
+    display: block;
+    width: 180px;
+}
+
+header ul li ul li {
+    width: 100%;
+}
+
+header ul li ul li a {
+    color: black;
+    background: white;
+}
+
+header ul li ul li a:hover {
+    background: silver;
+}
+
+header ul li ul li a.logout {
+    color: darkred;
+}
+
+header ul li a {
+    display: block;
+    padding: 21px;
+    font-size: 1.1em;
+    text-decoration: none;
+}
+
+header ul li a:hover {
+    background: #8ca3ac;
+    transition: 0.5s;
+}
+
+header .menu-toggle {
+    display: none;
+}
+
+/* unknown*/
+
+.page-wrapper {
+    min-height: 100%;
+}
+
+/* 最外面白色的大框 */
+
+.craft-panel {
+    width: 1200px;
+    background: rgba(255, 255, 255, 0.7);
+    height: 600px;
+    margin: 60px auto;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.3);
+}
+
+/* 会整体向上平移一段*/
+
+.craft-panel .newpost-content {
+    width: 100%;
+    height: 100%;
+    margin: 100px auto;
+    padding: 20px;
+    align-items: center;
+}
+
+/* unknown*/
+
+.craft-panel .newpost-content form {
+    outline: none;
+}
+
+/* new post和下面保持一段距离*/
+
+.craft-panel .newpost-content form .form-title {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 70px;
+    letter-spacing: .06em;
+}
+
+/* unknown*/
+
+.craft-panel .newpost-content form .error-msg {
+    display: block;
+    width: 100%;
+    margin: 5px auto;
+    padding: 8px;
+    border-radius: 5px;
+    list-style: none;
+    color: #884b4b;
+    background: #f3bdbd;
+    border: 2px solid #884b4b;
+}
+
+/* 两列分开*/
+
+.craft-panel .newpost-content form .divide-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+/* 去掉会整体变窄*/
+
+.craft-panel .newpost-content form .divide-wrapper .side {
+    flex: 1;
+    width: 50%;
+    padding: 40px;
+}
+
+/* unknown*/
+
+.craft-panel .newpost-content form .form-item.img-uploader {
+    display:flex;
+    margin: 20px auto;
+}
+
+.craft-panel .newpost-content form .form-item.img-uploader .uploader-title{
+    flex: 1;
+}
+/* 图片上传框*/
+
+.craft-panel .newpost-content form .form-item.img-uploader .img-frame {
+    width: 150px;
+    height: 150px;
+    margin: 0px auto;
+    background-size: 100% 100%;
+    border: 1px solid black;
+    border-radius: 5px;
+    position: relative;
+    
+}
+
+/* cover && choose 加粗*/
+
+.craft-panel label {
+    font-weight: bold;
+}
+
+.craft-panel .newpost-content form .form-item input {
+    border: none;
+    margin-bottom: 10px;
+}
+
+.craft-panel .newpost-content form .form-item .radio-group {
+    width: 100%;
+    height: 30px;
+    list-style-type: none;
+    padding: 0;
+}
+
+.craft-panel .newpost-content form .form-item .radio-group input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"]:checked+label, .Checked+label {
+    background: #f59760 !important;
+    color: #eeeeee !important;
+    
+    transition: 0.3s;
+}
+
+.craft-panel .newpost-content form .form-item .radio-group li {
+    float: left;
+    position: relative;
+    height: 30px;
+    width: 40%;
+    align-items: center;
+}
+
+.craft-panel .newpost-content form .form-item .radio-group label {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    font-size: 1.2rem;
+    background:#b8bfcf;
+    color: #dddddd;
+    padding-top: 2px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.craft-panel .newpost-content form .form-item .radio-group label:hover{
+    background:#8398ce;
+}
+
+/* 左侧三行之间的距离*/
+.craft-panel .newpost-content form .form-item textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-bottom: 1px solid rgb(128, 125, 125);
+    font-size: 15px;
+    border: 1px solid #ccc;
+}
+
+/* textarea的样式*/
+
+.craft-panel .newpost-content form .form-item textarea {
+    border: 0;
+    /*border-radius:5px;*/
+    background-color: white;
+    height: 40px;
+    padding: 10px;
+    resize: none;
+    border: 1px solid #ccc;
+}
+
+/* cover & choose并列显示*/
+
+.craft-panel .newpost-content form .form-item .uploader-title {
+    margin: 0px auto;
+    display: flex;
+    height: 40px;
+    width: 280px;
+}
+
+/* 隐藏"选择文件"*/
+
+.craft-panel .newpost-content form .form-item .uploader-title input[type="file"] {
+    display: none;
+}
+
+/* cover & choose水平对齐*/
+
+.craft-panel .newpost-content form .form-item .uploader-title label {
+    flex: 1;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+.craft-panel label span{
+    font-size: 0.8rem;
+    color: rgb(255, 81, 0);
+} 
+/* cover && choose的底色（黄色）*/
+
+/*.craft-panel .newpost-content form .form-item .upload-img #imgbtn-label{
+    color:white;
+    height:40px;
+    flex:2;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+
+}*/
+
+.craft-panel .newpost-content #upload-btn {
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #a6c1ee;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    opacity: 0.6;
+    /*box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);*/
+}
+.craft-panel .newpost-content #upload-btn:hover{
+    opacity: 1;
+}
+/* 左侧三行之间的距离*/
+
+.craft-panel .newpost-content form .form-item .uploader-title {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+    border: none;
+    padding: 10px;
+    /*border-bottom: 1px solid rgb(128, 125, 125);*/
+    font-size: 15px;
+   
+}
+
+/* unknown*/
+
+.craft-panel .newpost-content form .form-item .upload-img #imgbtn-label:hover {
+    background-color: #C6D5EE;
+    box-shadow: rgba(0, 0, 0, 0.3);
+}
+
+/* post按钮*/
+
+.craft-panel .newpost-content button {
+    text-align: center;
+    padding: 10px;
+    width: 20%;
+    /*margin:20px auto;*/
+    background: #ACACFA;
+    border: none;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    color: #fff;
+    transition: 0.4s;
+    /*float: right;*/
+    display: block;
+    margin: 0 auto;
+}
+
+/* unknown*/
+
+.craft-panel .newpost-content form button:hover {
+    background: #CFCFFA;
+    transition: 0.4s;
+}
+
+/* unknown*/
+
+.craft-panel .newpost-content form button:active {
+    background: #83abf5;
+}
+
+/* unknown*/
+
+.craft-panel .newpost-content .alternate {
+    text-align: center;
+    line-height: 40px;
+}
+
+/* unknown*/
+
+.craft-panel .newpost-content .alternate a {
+    text-decoration-line: none;
+    color: #397ff5;
+    transition: 0.3s;
+}
+
+/* unknown*/
+
+.craft-panel .newpost-content .alternate a:hover {
+    transition: 0.3s;
+    color: #ff7409;
+}
+
+.footer {
+    background: var(--theme-color);
+    color: white;
+    height: 300px;
+    width: 100%;
+    box-shadow: 0 50vh 0 50vh var(--theme-color);
+}
+
+.footer .footer-content {
+    height: 250px;
+    display: block;
+    padding-top: 20px;
+    padding-left: 20px;
+    margin: 0px 10px;
+    cursor: default;
+}
+
+.footer .footer-content .about .contact span {
+    display: block;
+    font-size: 1.1em;
+    margin-bottom: 8px;
+    color: white;
+}
+
+.footer .footer-content .about .socials {
+    padding-top: 15px;
+    cursor: pointer;
+}
+
+.footer .footer-content .about .socials a {
+    border: 2px solid darkgray;
+    color: darkgray;
+    width: 45px;
+    height: 41px;
+    padding-top: 5px;
+    margin-right: 5px;
+    text-align: center;
+    display: inline-block;
+    font-size: 1.3em;
+    border-radius: 50%;
+}
+
+.footer .footer-content .about .socials a:hover {
+    transform: scale(1.05);
+    background: #cfeaff;
+    transition: all 0.3s;
+}
+
+.footer .footer-content h1 {
+    color: white;
+}
+
+.footer .footer-content h2 {
+    color: white;
+}
+
+.footer .footer-content .about h1 span {
+    color: gold;
+}
+
+.footer .footer-content .about {
+    float: left;
+    width: 60%;
+}
+
+.footer .footer-content .link {
+    width: 40%;
+    float: right;
+}
+
+.footer .footer-content .link ul a {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    color: white;
+}
+
+.footer .footer-bottom {
+    background: var(--theme-color);
+    color: #868686;
+    height: 50px;
+    text-align: center;
+    left: 0px;
+    width: 100%;
+    padding-top: 18px;
+}
+
+@media screen and (max-width: 1048px) {
+    header {
+        position: relative;
+    }
+    header ul {
+        width: 100%;
+        background: #4a6874;
+        max-height: 0px;
+        overflow: hidden;
+    }
+    .showing {
+        max-height: 100em;
+    }
+    header ul li {
+        width: 100%;
+    }
+    header ul li ul {
+        position: static;
+        display: block;
+        width: 100%;
+        background: inherit;
+    }
+    header ul li ul li a {
+        color: white;
+        background: #4a6874;
+        padding: 10px 10px 10px 50px;
+    }
+    header ul li ul li a:hover {
+        background: #8ca3ac;
+    }
+    header ul li ul li a.logout {
+        color: darkred;
+    }
+    header .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        font-size: 1.8em;
+    }
+    header .logo {
+        margin-left: .5em;
+        /*border: 1px solid red;*/
+    }
+    header .logo-text {
+        font-size: 1.9em;
+    }
+}
