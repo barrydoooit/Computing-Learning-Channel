@@ -1,0 +1,53 @@
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 88888;
+    height: 60px;
+    min-width: 1200px;
+  }
+  
+  nav .logo {
+    width: 20%;
+    float: left;
+    color: #fff;
+    padding-left: 60px;
+    font-family: "Candal", serif;
+    cursor: default;
+  }
+  
+  nav .logo span {
+    color: orange;
+  }
+  
+  nav .menu {
+    width: 80%;
+    float: right;
+    padding-right: 60px;
+  }
+  
+  nav .menu ul {
+    float: right;
+    list-style: none;
+  }
+  
+  nav .menu ul li {
+    display: inline-block;
+  }
+  
+  nav .menu ul li a {
+    display: inline-block;
+    color: #fff;
+    padding: 15px;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  nav .menu ul li a:hover {
+    color: orange;
+    transform: translate(0, 5px);
+    transition: 0.3s;
+  }
+  
